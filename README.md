@@ -1,0 +1,2 @@
+# LojaDeItensDoMoTa
+Recuperação Senac-RS
