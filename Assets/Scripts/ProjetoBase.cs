@@ -17,7 +17,7 @@ public class ProjetoBase : MonoBehaviour
         if (quantidaCaC > 0)
         {
             //criando objeto do tipo corpo a corpo...
-            CorpoAC corpoAC = new CorpoAC();
+            CorpoACorpo corpoAC = new CorpoACorpo();
             //trocando o valor do objeto...
             corpoAC.TrocarValor();
             //se dinheiro for menor que o valor...
@@ -81,7 +81,7 @@ public class ProjetoBase : MonoBehaviour
     {
         if (quantidaAD > 0)
         {
-            ArmaAD armaAD = new ArmaAD();
+            ArmaADistancia armaAD = new ArmaADistancia();
             armaAD.TrocarValor();
             if (dinheiro < armaAD.Valor)
             {
@@ -109,79 +109,4 @@ public enum TipoDeArma
 {
     //criando as categorias de armas...
     CorpoACorpo, ArmaMagica, ArmaADistancia
-}
-//criando classe abstrata...
-public abstract class Arma
-{
-    //criando variaveis para mudar as informações...
-    protected TipoDeArma tipodeArma;
-    protected string nome;
-    protected float valor;
-    //trocando valor do objeto...
-    public abstract void TrocarValor();
-    //construtor do nome e do valor...
-    public string Nome
-    {
-        get
-        {
-            return nome;
-        }
-        set
-        {
-            nome = value;
-        }
-    }
- 
-    public float Valor
-    {
-        get
-        {
-            return valor;
-        }
-        set
-        {
-            valor = value;
-        }
-    }
-}
-//criando classe da categoria de armas corpo a corpo...
-public class CorpoAC : Arma
-{
-    //mostrando tipo da arma (corpo a corpo)...
-    public CorpoAC()
-    {
-        tipodeArma = TipoDeArma.CorpoACorpo;
-    }
-    //sobrescrevendo a função de trocar o valor...
-    public override void TrocarValor()
-    {
-        //trocando um valor a arma...
-        Valor = 300;
-    }
-}
-//criando classe da categoria de armas a distancia...
-public class ArmaAD : Arma
-{
-    public ArmaAD()
-    {
-        tipodeArma = TipoDeArma.ArmaADistancia;
-    }
-
-    public override void TrocarValor()
-    {
-        Valor = 650;
-    }
-}
-//criando classe da categoria de armas magicas...
-public class ArmaMagica : Arma
-{
-    public ArmaMagica()
-    {
-        tipodeArma = TipoDeArma.ArmaMagica;
-    }
-
-    public override void TrocarValor()
-    {
-        Valor = 700;
-    }
 }
